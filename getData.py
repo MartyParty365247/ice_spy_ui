@@ -12,7 +12,7 @@ from firebase_admin import credentials, db
 # Initialize Firebase Admin SDK
 if not firebase_admin._apps:
     # Path to your downloaded service account key
-        cred = credentials.Certificate("c:/Users/mjwwr/Downloads/ice-spy-firebase-adminsdk-w5zit-874f2f2e23.json")
+        cred = credentials.Certificate("secrets.toml")
 
     # Initialize the app with a service account, granting admin privileges
         firebase_admin.initialize_app(cred, {
