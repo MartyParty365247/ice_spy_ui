@@ -84,10 +84,4 @@ def extract_recent_lat_lon(data, hours=5):
  
  #Test Main
  
-ref_path = '/ice-reports'
- 
-raw_data = get_firebase_data(ref_path)
-#print(raw_data)
-#get_coordinates(raw_data)
-extract_recent_lat_lon(raw_data, 120)
-extract_recent_lat_lon(raw_data, 120)
+
