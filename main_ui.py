@@ -23,7 +23,7 @@ def main():
     st.set_page_config(page_title="Ice Spy Alert", layout="centered")
     col1, col2, col3 = st.columns([1, 2, 1])  # Wider center column
     with col2:
-        st.image("c:/Users/mjwwr/Documents/Senior  Design/API_Module/API/logo.png", width=300)
+        st.image("logo.png", width=300)
         st.title("Ice Spy Alert")
 
     # Load Firebase data
