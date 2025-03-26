@@ -8,11 +8,15 @@ Created on Tue Feb 18 12:09:37 2025
 from datetime import datetime, timedelta
 import firebase_admin
 from firebase_admin import credentials, db
+import streamlit as st
 
 # Initialize Firebase Admin SDK
 if not firebase_admin._apps:
+    #Load Credential from streamlit secret
+    firebase_json = st.secrets["twenty_four_volts"]
+    cred_dict = json.loads(firebase_json)
     # Path to your downloaded service account key
-        cred = credentials.Certificate("ice-spy-firebase-adminsdk-w5zit-1263e759bf.json")
+        cred = credentials.Certificate(cred_dict)
 
     # Initialize the app with a service account, granting admin privileges
         firebase_admin.initialize_app(cred, {
