@@ -9,14 +9,15 @@ from datetime import datetime, timedelta
 import firebase_admin
 from firebase_admin import credentials, db
 import streamlit as st
-
+import toml
 # Initialize Firebase Admin SDK
 if not firebase_admin._apps:
     #Load Credential from streamlit secret
-        firebase_json = st.secrets["loveDontHate"]
+        getSecret = st.secrets["loveDontHate"]
+        key = tmol.loads(getSecret)
        # cred_dict = json.loads(firebase_json)
     # Path to your downloaded service account key
-        cred = credentials.Certificate(firebase_json)
+        cred = credentials.Certificate(key)
 
     # Initialize the app with a service account, granting admin privileges
         firebase_admin.initialize_app(cred, {
