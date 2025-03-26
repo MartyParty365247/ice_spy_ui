@@ -13,8 +13,7 @@ import toml
 # Initialize Firebase Admin SDK
 if not firebase_admin._apps:
     #Load Credential from streamlit secret
-        getSecret = st.secrets["loveDontHate"]
-        key = toml.loads(getSecret)
+        key = st.secrets
        # cred_dict = json.loads(firebase_json)
     # Path to your downloaded service account key
         cred = credentials.Certificate(key)
